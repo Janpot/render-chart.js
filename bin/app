@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var createApp = require('..');
+
+var server = createApp().listen(process.env.PORT || 3000, () => {
+  console.log(`Server started on port ${server.address().port}.`);
+});

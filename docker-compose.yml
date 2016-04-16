@@ -1,0 +1,16 @@
+version: '2'
+services:
+  chartjs_build:
+    image: janpot/chartjs-build
+    build: ./build
+    volumes:
+      - ~/.npm:/cache/npm
+      - .:/src
+
+  chartjs:
+    image: janpot/chartjs
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/src
